@@ -1,20 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My First Webpage</h1>
-    </header>
-    <main>
-        <p>This iparagraph says everything that needs to be said.</p>
-    </main>
-    <footer>
-        <p>Created by Tim.</p>
-    </footer>
-</body>
+<html lang="en-US">
+    <head>
+        <title>HTML Learning</title>
+        <!-- I am setting up the internal CSS as header content. Whatever elements are configured here (body, h1, p) will maintain the same style in the body, unless specified otherwise. -->
+        <!-- There is also the option to <link> to an external CSS, but we will learn that at a later stage (looks pretty easy). -->
+        <style>
+            /* First we start with an example of an id: resistanceHeader */
+            /* An id can be only be used by one element in the html file. */
+            #resistanceHeader {
+                background-color: rgb(139, 106, 106);
+                color: seashell;
+                font-family: 'Courier New', Courier, monospace;
+                border: 2px solid black;
+                padding: 10px;
+            }
+
+            #linkedInLink {
+                background-color: rgb(139, 106, 106);
+                color: seashell;
+                font-family: 'Courier New', Courier, monospace;
+                padding: 10px;
+            }
+
+            body {
+                background-color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 110%;
+            }
+
+            h1 {
+                color: blue;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            p {
+                color: red;
+                font-family:'Courier New', Courier, monospace;
+                padding: 30px;
+                margin: 25px;
+            }
+
+            /* Here I can define my own class: .city */
+            /* A class can be used by any element in the html file. */
+            .titularDescription {
+                background-color: rgb(139, 106, 106);
+                color: seashell;
+                border: 2px solid black;
+                margin: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="background-color:seashell;padding:10px;">
+
+            <div class="titularDescription">
+                <h3 style="font-family: 'Courier New', Courier, monospace;">Truth Decoded</h3>
+                <p style="color: seashell;">The white blood cells to the sickness of lies.</p>
+            </div>
+
+            <!-- The link to this photo was copied from LinkedIn. -->
+            <img src="https://media.licdn.com/dms/image/D5603AQF2bALiTd3DpQ/profile-displayphoto-shrink_800_800/0/1674930927809?e=1698883200&v=beta&t=SN2h8YCC0vi0r_ILEH7EhMDNmOSpz-dQwFnikwXUIDU" 
+            alt="My Profile Picture" width="240" height="240" draggable="true">
+
+            <hr>
+            <h1 id="resistanceHeader">The Resistance</h1>
+
+            <!-- the <hr> tage adds a "thematic line break" between elements. It's essentially a line that fills the whole page. -->
+            <hr>
+            <h2 style="color:maroon;">Videography</h2>
+            <hr>
+            <h3 style="color:maroon;">Cinematography</h3>
+            <hr>
+            <h4 style="color:maroon;">Soundscapes</h4>
+            <hr>
+            <h5 style="color:maroon;">Story Structure</h5>
+
+            <!-- These link breaks cause the following text to appear on the next line. -->
+            <!-- If there is no text after the line break, that line will appear blank. -->
+            <p style="color:black;">Music videos, short films, movies...<br> <br> Our aim is truth, independent of corporate and government influence...</p>
+
+            <!-- This tag <pre> allows me to write a poaragraph with speces and line breaks without requiring <br> tags. I can even tab the start of the line. -->
+            <pre style="color: grey;">
+                <b>That engine which propels your body and mind forward is your spirit.</b>
+
+                <strong>The company you keep may be either fuel or fodder.</strong>
+
+                <em>The energy within you communicates no lies. Listen and act accordingly.</em>
+            </pre>
+
+            <!-- The link to my LinkedIn profile was acquired by navigating to my profile in a browers and copying the url. -->
+            <!--<a href="https://linkedin.com/in/tjohnson310/" target="_blank" rel="noopener" title="Follow the White Rabbit, Neo..." style="color:darkblue;">
+                Visit My LinkedIn Page...
+            </a>-->
+
+            <h5 id="linkedInLink">Click the button below for link to my LinkedIn profile.</h5>
+            <button onclick="displayResult()">Show link...</button>
+            <script>
+                function displayResult() {
+                    document.getElementById("linkedInLink").innerHTML = 
+                    '<a href="https://linkedin.com/in/tjohnson310/" target="_blank" rel="noopener" title="Follow the White Rabbit, Neo..." style="color:rgb(176, 209, 247);">Visit My LinkedIn Page...</a>';
+                }
+            </script>
+        </div>
+    </body>
 </html>
